@@ -1,9 +1,10 @@
-var app = angular.module('index.controller');
+var app = angular.module('app.index');
 
-app.controller('filterCtrl', [$scope, function ($scope) {
-  $scope.watch("filterInput", function (newValue, oldValue) {
-    if (angular.isDefined(newValue) && angular.isDefined(oldValue) && newValue.toString() !== oldValue.toString()) {
-      console.log('salut');
-    }
+app.controller('filterCtrl', filterCtrl);
+
+function filterCtrl($scope) {
+  $scope.$watch("filterInput", function (newValue, oldValue) {
+    console.log('salut');
   })
-}]);
+}
+
